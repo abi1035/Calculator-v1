@@ -1,0 +1,81 @@
+body{
+    background-color: whitesmoke;
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.wholeDiv{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   /* border: 10px solid red; */
+   height: 600px;
+}
+
+.calcBody{
+    background-color: grey;
+    height: 470px;
+    width: 400px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.calcDisplay{
+    background-color: lightblue;
+    height: 140px;
+    border: 2px solid black;
+    text-align: right;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    margin: 0px 10px 0px 10px;
+}
+
+.deleteButton{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 16px;
+}
+
+.secondRow .firstRow{
+    display: flex;
+}
+
+#userInput{
+    font-size: 30px;
+}
+
+#userValue{
+    font-size: 40px;
+}
+
+#delete{
+    background-color: dodgerblue;
+}
+
+.operator{
+    background-color: orange;
+}
+
+.zero,.decimal, .number{
+    background-color: aquamarine;
+}
+
+button {
+    margin: 1px;
+    border-radius: 5%;
+    border: none;
+    font-weight: initial;
+    font-size: 2em;
+    font-family: monospace;
+    color: black;
+    width: 80px;
+    height: 50px;
+    margin: 5px;
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
+}

@@ -2,6 +2,9 @@ let operatorSet=false;
 let decimalSet=false;
 // Operator set is set to false everytime an equal to is clicked, so it can reset the
 
+
+
+
 // DISABLES OPERATOR
 for(let i=0;i<4;i++){
     document.getElementsByClassName("operator")[i].disabled=true
@@ -39,13 +42,17 @@ function keyPress (event){
     
     
     // Initial Condition
-    if(existingValue===""||existingValue===0 &&operatorSet===false){
+    if(existingValue===""||existingValue===0 && operatorSet===false){
         if (keyInput==1||keyInput==2||keyInput==3||keyInput==4||keyInput==5||keyInput==6||keyInput==7||keyInput==8||keyInput==9||keyInput==0){
             let newContent = document.createTextNode(`${keyInput}`);
             userInput.appendChild(newContent);
             for(let i=0;i<4;i++){
                 document.getElementsByClassName("operator")[i].disabled=false
+                
             }
+            operatorSet=true;
+            console.log(operatorSet)
+            
             
 
         }else if(keyInput==="Backspace"){
@@ -57,7 +64,7 @@ function keyPress (event){
         }
         document.getElementsByClassName("decimal")[0].disabled=false
 
-        }else if(keyInput=="+"||keyInput=="-"||keyInput=="*"||keyInput=="/"){
+        }else if(keyInput=="+"||keyInput=="-"||keyInput=="*"||keyInput=="/" && operatorSet===true){
             const newContent = document.createTextNode(`  ${keyInput}  `);
             userInput.appendChild(newContent);
             // decimalButton.addEventListener("click", Setdecimal);
@@ -94,6 +101,9 @@ function keyPress (event){
             }else if(keyInput==="Backspace"){
             userInput.innerHTML="";
             document.getElementById("userValue").innerHTML=""
+            for(let i=0;i<4;i++){
+                document.getElementsByClassName("operator")[i].disabled=true
+            }
             
 
             // When user wants to carry out a new calculation
@@ -120,6 +130,9 @@ function keyPress (event){
         }else if(keyInput==="Backspace"){
             userInput.innerHTML="";
             document.getElementById("userValue").innerHTML=""
+            for(let i=0;i<4;i++){
+                document.getElementsByClassName("operator")[i].disabled=true
+            }
         }else if(keyInput==="Enter"){
             equalClick()
 
@@ -196,6 +209,7 @@ function buttonClick(e) {
             for(let i=0;i<4;i++){
                 document.getElementsByClassName("operator")[i].disabled=true
             }
+
             decimalButton.addEventListener("click", Setdecimal);
 
         }else if(buttonValue==="delete"){
@@ -208,6 +222,7 @@ function buttonClick(e) {
         }else if(buttonValue==="."){
             decimalButton.addEventListener("click", Setdecimal);
         }else{
+        
         const newContent = document.createTextNode(`${buttonValue}`);
         userInput.appendChild(newContent);
         for(let i=0;i<4;i++){
@@ -253,7 +268,11 @@ function calculate(evalArray){
 }
 
 
-function negativeClick(event){
-    console.log(event.target);
-    document.getElementById("userInput").innerHTML=`- ${buttonValue}`
+
+count=0;
+function negativeClick(key){
+    count++;
+    console.log(count)
+   
+  
 }

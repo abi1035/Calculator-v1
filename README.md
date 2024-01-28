@@ -1,2 +1,8 @@
-# Calculator-v1
-A basic Calculator, -GUI to be added soon
+# Calculator-v2
+Basic GUI added
+
+bugs to fix
+-Need to add more function
+-Need to fix operator before number bug (When keyinput)
+-Improve GUI
+
